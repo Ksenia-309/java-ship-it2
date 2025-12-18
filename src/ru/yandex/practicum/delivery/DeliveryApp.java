@@ -61,10 +61,7 @@ public class DeliveryApp {
         System.out.println("0 — Завершить");
     }
 
-    // реализуйте методы ниже
-
     private static void addParcel() {
-        // Подсказка: спросите тип посылки и необходимые поля, создайте объект и добавьте в allParcels
         System.out.println("Введите тип посылки, которую Вы хотите отправить: ");
         System.out.println("1 — Стандартная посылка");
         System.out.println("2 — Хрупкая посылка");
@@ -135,7 +132,6 @@ public class DeliveryApp {
     }
 
     private static void sendParcels() {
-        // Пройти по allParcels, вызвать packageItem() и deliver()
         for (Parcel parcel : allParcels) {
             parcel.packageItem(parcel);
             parcel.deliver(parcel);
@@ -143,7 +139,6 @@ public class DeliveryApp {
     }
 
     private static void calculateCosts() {
-        // Посчитать общую стоимость всех доставок и вывести на экран
         int totalStandardCost = 0;
         for (Parcel parcel : allParcels) {
             totalStandardCost += parcel.calculateDeliveryCost();

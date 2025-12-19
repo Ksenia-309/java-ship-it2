@@ -9,7 +9,7 @@ public class PerishableParcel extends Parcel{
         this.timeToLive = timeToLive;
     }
 
-    protected boolean isExpired(int currentDay) {
+    public boolean isExpired(int currentDay) {
         int sum = sendDay + timeToLive;
         if(sum >= currentDay) {
             System.out.println("Срок годности посылки еще не истек!");

@@ -69,60 +69,45 @@ public class DeliveryApp {
 
         int typeParcel = Integer.parseInt(scanner.nextLine());
 
+        System.out.println("Введите описание Вашей посылки: ");
+        String description = scanner.nextLine();
+        System.out.println("Введите вес Вашей посылки: ");
+        int weight = Integer.parseInt(scanner.nextLine());
+        System.out.println("Введите адрес получателя: ");
+        String deliveryAddress = scanner.nextLine();
+        System.out.println("Введите дату отправки Вашей посылки: ");
+        int sendDay = Integer.parseInt(scanner.nextLine());
+
         switch (typeParcel) {
             case 1:
-                System.out.println("Введите описание Вашей посылки: ");
-                String descriptionStand = scanner.nextLine();
-                System.out.println("Введите вес Вашей посылки: ");
-                int weightStand = Integer.parseInt(scanner.nextLine());
-                System.out.println("Введите адрес получателя: ");
-                String deliveryAddressStand = scanner.nextLine();
-                System.out.println("Введите дату отправки Вашей посылки: ");
-                int sendDayStand = Integer.parseInt(scanner.nextLine());
-                standardBox.addParcel(new StandardParcel(descriptionStand, weightStand,
-                        deliveryAddressStand,
-                        sendDayStand));
-                allParcels.add(new StandardParcel(descriptionStand, weightStand,
-                        deliveryAddressStand,
-                        sendDayStand));
+                standardBox.addParcel(new StandardParcel(description, weight,
+                        deliveryAddress,
+                        sendDay));
+                allParcels.add(new StandardParcel(description, weight,
+                        deliveryAddress,
+                        sendDay));
                 break;
             case 2:
-                System.out.println("Введите описание Вашей посылки: ");
-                String descriptionFragile = scanner.nextLine();
-                System.out.println("Введите вес Вашей посылки: ");
-                int weightFragile = Integer.parseInt(scanner.nextLine());
-                System.out.println("Введите адрес получателя: ");
-                String deliveryAddressFragile = scanner.nextLine();
-                System.out.println("Введите дату отправки Вашей посылки: ");
-                int sendDayFragile = Integer.parseInt(scanner.nextLine());
-                fragileBox.addParcel(new FragileParcel(descriptionFragile, weightFragile,
-                        deliveryAddressFragile,
-                        sendDayFragile));
-                allParcels.add(new FragileParcel(descriptionFragile, weightFragile,
-                        deliveryAddressFragile,
-                        sendDayFragile));
-                trackingParcel.add(new FragileParcel(descriptionFragile, weightFragile,
-                        deliveryAddressFragile,
-                        sendDayFragile));
+                fragileBox.addParcel(new FragileParcel(description, weight,
+                        deliveryAddress,
+                        sendDay));
+                allParcels.add(new FragileParcel(description, weight,
+                        deliveryAddress,
+                        sendDay));
+                trackingParcel.add(new FragileParcel(description, weight,
+                        deliveryAddress,
+                        sendDay));
                 break;
             case 3:
-                System.out.println("Введите описание Вашей посылки: ");
-                String descriptionPer = scanner.nextLine();
-                System.out.println("Введите вес Вашей посылки: ");
-                int weightPer = Integer.parseInt(scanner.nextLine());
-                System.out.println("Введите адрес получателя: ");
-                String deliveryAddressPer = scanner.nextLine();
-                System.out.println("Введите дату отправки Вашей посылки: ");
-                int sendDay = Integer.parseInt(scanner.nextLine());
                 System.out.println("Укажите допустимый срок хранения Вашей посылки: ");
                 int timeToLive = Integer.parseInt(scanner.nextLine());
-                perishableBox.addParcel(new PerishableParcel(descriptionPer, weightPer, deliveryAddressPer,
+                perishableBox.addParcel(new PerishableParcel(description, weight, deliveryAddress,
                         sendDay,
                         timeToLive));
-                allParcels.add(new PerishableParcel(descriptionPer, weightPer, deliveryAddressPer,
+                allParcels.add(new PerishableParcel(description, weight, deliveryAddress,
                         sendDay,
                         timeToLive));
-                expiredParcel.add(new PerishableParcel(descriptionPer, weightPer, deliveryAddressPer,
+                expiredParcel.add(new PerishableParcel(description, weight, deliveryAddress,
                         sendDay,
                         timeToLive));
                 break;

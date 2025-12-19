@@ -23,18 +23,6 @@ public class ParcelBox<T extends Parcel> {
         }
     }
 
-    public List<T> getParcels() {
-        return parcels;
-    }
-
-    public int getMaxWeight() {
-        return maxWeight;
-    }
-
-    public int getStartWeight() {
-        return startWeight;
-    }
-
     public void showContents() {
         System.out.println("Содержимое коробки: " + parcels.size() + ". Вес коробки: " + startWeight);
     }
